@@ -6,7 +6,8 @@
 html,body{
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to right bottom, #000000, #0d0d0d, #161616, #1d1d1d, #252525, #252525, #252525, #252525, #1d1d1d, #161616, #0d0d0d, #000000);
+   background-image: linear-gradient(to right bottom, #000000, #0d0d0d, #161616, #1d1d1d, #252525, #252525, #252525, #252525, #1d1d1d, #161616, #0d0d0d, #000000); 
+   background-attachment: fixed;
   font-family: Montserrat;
 }
 .nav{
@@ -143,14 +144,15 @@ html,body{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: red;
+  /* background-color: red; */
   height: 60%;
   width: 100%;
+  perspective: 1000;
 }
 #pizza, #momo, #burger{
   height: 80%;
   width: 400px;
-  background-color: #fff;
+  /* background-color: #fff; */
   /* border-radius: 20px; */
 }
 #pizza{
@@ -159,24 +161,53 @@ html,body{
   justify-content: center;
   position: relative;
 }
+#burger{
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+#pizza:hover, #momo:hover, #burger:hover{
+   transform: rotate3d(-1,1,0,20deg);
+   transition: 0.7s;
+   cursor: pointer;
+}
 #momo{
   margin-right: 70px;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
-#pizza img{
+#pizza img, #burger img, #momo img{
   height:100%;
   width: 100%;
   object-fit: cover;
+  border-radius: 30px;
 }
-#overlay-pizza{
+#overlay-pizza, #overlay-burger, #overlay-momo{
   position: absolute;
   height: 100%;
   width: 100%;
   color: white;
-  background: greenyellow;
+  background-image: linear-gradient(to bottom, #666464, #4c4b4b, #343333, #1d1d1d, #000000);
   opacity: 0;
-}
-#overlay-pizza:hover{
-  opacity: 1;
   transition: 0.7s;
+  border-radius: 30px;
+}
+#overlay-pizza h2,#overlay-burger h2, #overlay-momo h2{
+  text-align: center;
+  margin-top: 40px;
+}
+#overlay-pizza p, #overlay-burger p, #overlay-momo p{
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 40px;
+  margin-top: 20px;
+}
+#overlay-pizza:hover, #overlay-burger:hover, #overlay-momo:hover{
+  opacity: 1;
+  box-shadow: 0px 0px 11px 3px rgba(255,255,255,0.75);
+  -webkit-box-shadow: 0px 0px 11px 3px rgba(255,255,255,0.75);
+  -moz-box-shadow: 0px 0px 11px 3px rgba(255,255,255,0.75);
 }
 
