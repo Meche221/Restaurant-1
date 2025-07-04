@@ -139,3 +139,44 @@ html,body{
 #see-menu:hover{
   color: rgb(255, 174, 0);
 }
+#bottom{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: red;
+  height: 60%;
+  width: 100%;
+}
+#pizza, #momo, #burger{
+  height: 80%;
+  width: 400px;
+  background-color: #fff;
+  /* border-radius: 20px; */
+}
+#pizza{
+  margin-left: 70px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+#momo{
+  margin-right: 70px;
+}
+#pizza img{
+  height:100%;
+  width: 100%;
+  object-fit: cover;
+}
+#overlay-pizza{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background: greenyellow;
+  opacity: 0;
+}
+#overlay-pizza:hover{
+  opacity: 1;
+  transition: 0.7s;
+}
+
